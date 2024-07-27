@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Steps, Button, Form, Input, DatePicker, Table, Space, Typography, Select, Divider } from 'antd';
+import { Steps, Form, DatePicker, Table, Typography, Select, Divider, Layout, Button, Input, Space } from 'antd';
 import { UserOutlined, FileTextOutlined, FilePdfOutlined } from '@ant-design/icons';
+
+import { Link } from 'react-router-dom'; 
 import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
 import jsPDF from 'jspdf';
@@ -8,11 +10,12 @@ import 'jspdf-autotable';
 import headerImage from '../images/header-image.png'; // Path to your header image
 import footerImage from '../images/footer-image.png'; // Path to your footer image
 
-
+const { Header } = Layout;
 const { Step } = Steps;
 const { TextArea } = Input;
 const { Title } = Typography;
 const { Option } = Select;
+
 
 const AdminPage = () => {
   const [current, setCurrent] = useState(0);
@@ -450,7 +453,19 @@ const AdminPage = () => {
   ];
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div>
+      <Header className="bg-gradient-to-r from-teal-400 to-teal-600 text-white shadow-md fixed top-0 left-0 right-0 z-50 w-full">
+        <div className="flex items-center justify-between max-w-6xl mx-auto px-4">
+          <div className="text-xl font-bold">Vanamala Clinic</div>
+          <div className="flex items-center space-x-4 ml-auto">
+            <Link to="/adminhome">
+              <Button className="bg-white text-black border-none hover:bg-teal-100" type="primary">Your Home</Button>
+            </Link>
+          </div>
+        </div>
+      </Header>
+    
+    <div style={{ padding: '10%', marginTop: '10%' }}>
       <Steps current={current} style={{ marginBottom: '20px' }}>
         {steps.map(step => (
           <Step key={step.title} title={step.title} icon={step.icon} />
@@ -470,6 +485,7 @@ const AdminPage = () => {
             )}
         </div>
       </div>
+    </div>
     </div>
   );
 };

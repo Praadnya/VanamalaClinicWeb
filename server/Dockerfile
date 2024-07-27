@@ -1,21 +1,19 @@
-# Dockerfile for FastAPI
+# server/Dockerfile
+FROM python:3.9-slim
 
-# Use the official Python image from the Docker Hub
-FROM python:3.11-slim
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-# Set working directory
+# Create and set the working directory
 WORKDIR /app
 
 # Install dependencies
-COPY server/requirements.txt ./
+COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the FastAPI application code and .env file
-COPY server/ ./
-COPY server/.env ./
+# Copy the application
+COPY . /app/
 
-# Expose port 8000
-EXPOSE 8000
-
-# Command to run the FastAPI application
+# Command to run the application
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -23,6 +23,9 @@ const menu = (
     <Menu.Item key="10">
       <a href="#about">About</a>
     </Menu.Item>
+    <Menu.Item key="11">
+      <Link to="/">Logout</Link>
+    </Menu.Item>
   </Menu>
 );
 

@@ -22,7 +22,7 @@ const menu = (
       <a href="#references">Reference Links</a>
     </Menu.Item>
     <Menu.Item key="1">
-      <Link to="/login">Admin</Link>
+      <Link to="/login">Admin Login</Link>
     </Menu.Item>
   </Menu>
 );
@@ -64,17 +64,17 @@ const Home = () => {
   return (
     <Layout className="layout min-h-screen flex flex-col">
       <Header className="bg-gradient-to-r from-teal-400 to-teal-600 text-white shadow-md fixed top-0 left-0 right-0 z-50 w-full">
-    <div className="flex items-center justify-between max-w-6xl mx-auto px-4 py-4">
-      <div className="text-xl font-bold">Vanamala Clinic</div>
-      <div className="flex items-center space-x-4 ml-auto">
-        <Dropdown overlay={menu} trigger={['click']}>
-          <a className="ant-dropdown-link text-white font-bold text-xl hover:text-teal-200" onClick={e => e.preventDefault()}>
-            Menu <DownOutlined />
-          </a>
-        </Dropdown>
-      </div>
-    </div>
-  </Header>
+        <div className="flex items-center justify-between max-w-6xl mx-auto px-4 py-4">
+          <div className="text-xl font-bold">Vanamala Clinic</div>
+          <div className="flex items-center space-x-4 ml-auto">
+            <Dropdown overlay={menu} trigger={['click']}>
+              <a className="ant-dropdown-link text-white font-bold text-xl hover:text-teal-200" onClick={e => e.preventDefault()}>
+                Menu <DownOutlined />
+              </a>
+            </Dropdown>
+          </div>
+        </div>
+      </Header>
       <Content className="mt-20 sm:p-8 md:p-12 lg:p-16 xl:p-20 flex-grow">
         <div className="container mx-auto">
           <section id="announcements" className="py-2 px-6 bg-gray-100 rounded-lg shadow-lg shadow-teal-500 mb-8">
@@ -134,20 +134,29 @@ const Home = () => {
           </section>
         </div>
       </Content>
-      <Footer className="bg-gradient-to-r from-teal-400 to-teal-600 text-white py-8">
-        <div className="container mx-auto flex flex-wrap justify-between items-start px-4">
-          <div className="flex-1 min-w-[250px]">
+      <Footer className="bg-gradient-to-r from-teal-400 to-teal-600 text-white py-8" >
+        <div className="container mx-auto flex flex-wrap justify-between items-start ">
+          <div className="flex-1" style={{maxWidth:'30%'}}>
             <h2 className="text-lg font-bold mb-2">Address</h2>
-            <p>Vanamala Clinic, RBI Layout, 2nd Main, 5th Cross, JP Nagar, 7th Phase Bangalore-560078</p>
+            <p>
+              <a
+            href="https://maps.app.goo.gl/6kxrqaaGdwPPJ2Ey5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white underline hover:text-gray-300"
+              >
+              Vanamala Clinic, RBI Layout, 2nd Main, 5th Cross, JP Nagar, 7th Phase Bangalore-560078
+              </a>
+            </p>
           </div>
-          <div className="flex-1 min-w-[250px] flex flex-col items-end">
+          <div className="flex-1 min-w-[5%] flex flex-col px-2 " style={{position:'absolute', right:'5%'}}>
             <h2 className="text-lg font-bold mb-2">Contact Us</h2>
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-2 ">
               <div className="flex items-center space-x-2">
                 <MailOutlined />
                 <span>vanamala457@gmail.com</span>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2" >
                 <PhoneOutlined />
                 <span>+91 9242201248</span>
               </div>

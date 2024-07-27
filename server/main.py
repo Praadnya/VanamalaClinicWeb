@@ -248,13 +248,6 @@ async def update_timings(id: str, timings: dict):
         raise HTTPException(status_code=404, detail="Timings not found")
     return {"success": True, "message": "Timings updated"}
 
-# @app.delete("/timings/{id}")
-# async def delete_timings(id: str):
-#     collection = db['timings']
-#     result = await collection.delete_one({"_id": ObjectId(id)})
-#     if result.deleted_count == 0:
-#         raise HTTPException(status_code=404, detail="Timings not found")
-#     return {"success": True, "message": "Timings deleted"}
 
 # Similarly update about endpoints
 @app.post("/about")
@@ -278,14 +271,6 @@ async def update_about(id: str, about: dict):
     if result.matched_count == 0:
         raise HTTPException(status_code=404, detail="About content not found")
     return {"success": True, "message": "About content updated"}
-
-# @app.delete("/about/{id}")
-# async def delete_about(id: str):
-#     collection = db['about']
-#     result = await collection.delete_one({"_id": ObjectId(id)})
-#     if result.deleted_count == 0:
-#         raise HTTPException(status_code=404, detail="About content not found")
-#     return {"success": True, "message": "About content deleted"}
 
 if __name__ == '__main__':
     import uvicorn
