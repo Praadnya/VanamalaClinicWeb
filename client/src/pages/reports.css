@@ -1,0 +1,11 @@
+.reports-table .ant-table-thead > tr > th {
+    white-space: nowrap;
+    text-align: center;
+    background-color: #80d7df;
+  }
+  
+  .reports-table .ant-table-cell {
+    white-space: nowrap;
+    text-align: center;
+  }
+  
