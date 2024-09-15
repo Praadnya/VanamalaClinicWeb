@@ -1,6 +1,6 @@
 # Vanamala Clinic Website
 
-This is a clinic management website built for **Dr. Vanamala**, providing an efficient platform for managing patient appointments, generating PDFs for prescriptions, and displaying important clinic information. The website includes a home page showcasing the clinic's services, timings, and announcements.
+This is a clinic management website built for **Dr. Sujatha SK**, providing an efficient platform for managing patient information, generating PDFs for prescriptions, and displaying important clinic information. The website includes a home page showcasing the clinic's services, timings, and announcements.
 
 ## Key Features
 
