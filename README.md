@@ -24,7 +24,7 @@ This is a clinic management website built for **Dr. Vanamala**, providing an eff
 
 - **Other Tools**:
   - jsPDF (PDF generation for patient prescriptions)
-  - Twilio (appointment notifications via SMS)
+  - Twilio (doctor authentication via SMS)
 
 ## Commands to run the project
 
@@ -35,13 +35,14 @@ This is a clinic management website built for **Dr. Vanamala**, providing an eff
    ```
 ### Backend
 To start the FastAPI server, run:
-bash
+```bash
 cd server
 uvicorn app.main:app --reload
-
+```
 ### Frontend
 To start the React app, run:
-bash
+```bash
 cd client
 npm start
+```
 
